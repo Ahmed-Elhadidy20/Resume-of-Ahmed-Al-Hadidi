@@ -1,413 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Ahmed_Elhdidy</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ahmed Elhadidy | Front-End Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico"/>
+    
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
-
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-        <link href="lib/slick/slick.css" rel="stylesheet">
-        <link href="lib/slick/slick-theme.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body data-spy="scroll" data-target=".navbar" data-offset="51">
-        <div class="wrapper">
-            <div class="sidebar">
-                <div class="sidebar-header">
-                    <img src="img/profile.jpg" alt="Image">
-                </div>
-                <div class="sidebar-content">
-                    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                        <a href="#" class="navbar-brand">Navigation</a>
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#header">Home<i class="fa fa-home"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#about">About<i class="fa fa-address-card"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#experience">Experience<i class="fa fa-star"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#skills">Skills<i class="fa fa-tasks"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#portfolio">Portfolio<i class="fa fa-file-archive"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#contact">Contact<i class="fa fa-envelope"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <div class="sidebar-footer">
-                    <a href="https://www.facebook.com/profile.php?id=61558499777133"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/AhmedEl43873886"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/ahmed-elhadidy-39724b16b/"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="content">
-                <!-- Header Start -->
-                <div class="header" id="header">
-                    <div class="content-inner">
-                        <p>I'm</p>
-                        <h1>Ahmed_Elhdidy</h1>
-                        <h2></h2>
-                        <div class="typed-text">Web Designer, Web Developer, Front End Developer, Apps Developer, Graphic Designer</div>
-                    </div>
-                </div>
-                <!-- Header End -->
-                
-                <!-- Large Button Start -->
-                <div class="large-btn">
-                    <div class="content-inner">
-                        <a class="btn" href="https://drive.usercontent.google.com/u/0/uc?id=1BjHa0nX75u5rrqhVNd6pan4xPsoNpXUP&export=download"><i class="fa fa-download"></i>Resume</a>
-                    </div>
-                </div>
-                <!-- Large Button End -->
-                
-                <!-- About Start -->
-                <div class="about" id="about">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>About Me</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6 col-lg-5">
-                                <img src="img/about.jpg" alt="Image">
-                            </div>
-                            <div class="col-md-6 col-lg-7">
-                               <p>
-                                Working as a front-end developer, I know how to build a seamless web application that helps
-                                 users get what they need to do done. I have a strong combination of technical ability and 
-                                 creativity.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="skills">
-                                    <div class="skill-name">
-                                        <p>HTML & CSS</p><p>100%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="skill-name">
-                                        <p>JavaScript</p><p>95%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="skill-name">
-                                        <p>Problem solving</p><p>95%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="skills">
-                                    <div class="skill-name">
-                                        <p>Bootstrap</p><p>90%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="skill-name">
-                                        <p>Git</p><p>85%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="skill-name">
-                                        <p>Team work</p><p>85%</p>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- About End -->
-
-                <!-- Experience Start -->
-                <div class="experience" id="experience">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Experience</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2023 <i>to</i> Present</span>
-                                    <h3>Front End Developer at Freelancer</h3>
-                                    <p>
-                                        Experienced Software Developer adept in bringing forth expertise in design, installation, testing and maintenance of software systems.
-                                        
-                                        Proficient in various platforms, languages, and embedded systerns.
-                                        
-                                        Able to effectively self-manage during independent projects, as well as collaborate as part of a productive team..
-                                        
-                                        Adept in providing patrons with optimal customer service, while maintaining a friendly and helpful attitude.                                        
-                                        Bringing forth expertise in design, installation, testing and maintenance of web systems, Equipped with a diverse and promising skill-set.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i>Present</span>
-                                    <h3>computer science</h3>
-                                    <p>Word, pdf, power point and data intery.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> Present</span>
-                                    <h3>CCTV technician</h3>
-                                    <p>Installing, maintaining, repairing, and replacing security cameras, computer networks, and other equipment used in video surveillance systems.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exp-col">
-                                    <span>01-Jan-2020 <i>to</i> Present </span>
-                                    <h3>Computer Technician</h3>
-                                    <p>responsible for maintaining computer systems within a business setting, installing computers, routers and other hardware, updating or repairing existing systems and. troubleshooting problems with hardware.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Experience End -->
-                
-                <!-- Education Start -->
-                <div class="education" id="education">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Education</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="edu-col">
-                                    <span>10-Dec-2018 <i>to</i> 16-Dec-2022</span>
-                                    <h3>Al Azhar university</h3>
-                                    <p>Faculty of Arabic Language.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="edu-col">
-                                    <span>19-Dec-2022 <i>to</i> 19-Jan-2023</span>
-                                    <h3>courses</h3>
-                                    <p>Responsive website basics By Html, Css, Javascript.</p>
-                                    <a href="https://drive.google.com/file/d/1CeLQ5mlOAwRU6FbqMhajisA433P7fZDC/view?usp=drivesdk" class="CERTIFICATE">COURSE CERTIFICATE</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Education End -->
-                
-                <!-- Skills Start -->
-                <div class="skills" id="skills">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Skills</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="skl-col">
-                                    <i class="fa fa-code"></i>
-                                    <h3>HTML & CSS</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="skl-col">
-                                    <i class="fa-brands fa-js"></i>
-                                    <h3>JavaScript</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="skl-col">
-                                    <i class="fa-brands fa-square-git"></i>
-                                    <h3>Git</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="skl-col">
-                                    <i class="fa-brands fa-resolving"></i>
-                                    <h3>Problem solving</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="skl-col">
-                                    <i class="fa-brands fa-bootstrap"></i>
-                                    <h3>Bootstrap</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="skl-col">
-                                    <i class="fa-solid fa-user-group"></i>
-                                    <h3>Team work</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Skills End -->
-                
-                <!-- Portfolio Start -->
-                <div class="portfolio" id="portfolio">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Portfolio</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <ul id="portfolio-flters">
-                                    <li data-filter="*" class="filter-active">All</li>
-                                    <li data-filter=".web-dev">Development</li>
-                                    <li data-filter=".web-des">Design</li>
-                                    <li data-filter=".dig-mar">Marketing</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row portfolio-container">
-                            <div class="col-lg-4 col-md-6 portfolio-item web-dev">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/portfolio-1.jpg" class="img-fluid" alt="">
-                                        <a href="img/portfolio-1.jpg" data-lightbox="portfolio" data-title="Project Name" class="link-preview" title="Preview"><i class="fa fa-eye"></i></a>
-                                        <a href="https://ahmed-elhadidy20.github.io/Elhadidy_World/" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                        <a class="portfolio-title" href="https://ahmed-elhadidy20.github.io/Elhadidy_World/"target="_blank">Elhadidy_World<span>Web Development</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 portfolio-item web-dev">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/portfolio-2.jpg" class="img-fluid" alt="">
-                                        <a href="img/portfolio-3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                        <a href="https://ahmed-elhadidy20.github.io/ElH-didi/" target="_blank"class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                        <a class="portfolio-title" href="https://ahmed-elhadidy20.github.io/ElH-didi/" target="_blank">ElH-didi <span>Web Development</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/portfolio-3.jpg" class="img-fluid" alt="">
-                                        <a href="img/portfolio-2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Project Name" title="Preview"><i class="fa fa-eye"></i></a>
-                                        <a href="https://ahmed-elhadidy20.github.io/bondi/" target="_blank" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
-                                        <a class="portfolio-title" href="https://ahmed-elhadidy20.github.io/bondi/" target="_blank">Bondi <span>Web Design</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- Portfolio End -->
-        
-                <!-- Contact Start -->
-                <div class="contact" id="contact">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Contact</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="contact-info">
-                                    <p><i class="fa fa-user"></i>Ahmed_Elhdidy</p>
-                                    <p><i class="fa fa-tag"></i> Front End  Developer </p>
-                                    <p><i class="fa fa-envelope"></i><a href="aalhdidy4@gmail.com">aalhdidy4@gmail.com</a></p>
-                                    <p><i class="fa fa-phone"></i><a href="tel:+201000412617">+201000412617</a></p>
-                                    <p><i class="fa fa-map-marker"></i>Egypt, Mansoura, Dakahlia Governorate</p>
-                                    <div class="social">
-                                        <a class="btn" href="https://twitter.com/AhmedEl43873886"><i class="fab fa-twitter"></i></a>
-                                        <a class="btn" href="https://www.facebook.com/profile.php?id=61558499777133"><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn" href="https://www.linkedin.com/in/ahmed-elhadidy-39724b16b/"><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="btn" href="https://github.com/Ahmed-Elhadidy20"><i class="fa-brands fa-github"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form">
-                                    <form>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <input type="text" class="form-control" placeholder="Your Name" />
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <input type="email" class="form-control" placeholder="Your Email" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Subject" />
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" rows="5" placeholder="Message"></textarea>
-                                        </div>
-                                        <div><button class="btn" type="submit">Send Message</button></div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Contact End -->
-                
-                <!-- Footer Start -->
-                <div class="footer">
-                    <div class="content-inner">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <p>&copy; Copyright </a>. All Rights Reserved</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Powered by Ahmed_Elhdidy</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer Start -->
-            </div>
+    <!-- Sidebar / Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/profile.jpg" alt="Ahmed Elhadidy" class="profile-img"/>
+            <h3>Ahmed Elhadidy</h3>
+            <p>Front-End Developer</p>
         </div>
         
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        <nav class="sidebar-nav">
+            <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
+            <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
+            <a href="#skills" class="nav-link"><i class="fas fa-tools"></i> Skills</a>
+            <a href="#portfolio" class="nav-link"><i class="fas fa-laptop-code"></i> Portfolio</a>
+            <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
         
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/slick/slick.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+        <div class="sidebar-social">
+            <a href="https://github.com/Ahmed-Elhadidy20" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ahmed-elhdidy-81307035a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/AhmedEl43873886" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="hero-content" data-aos="fade-up">
+                <p class="greeting">Hello, I'm</p>
+                <h1>Ahmed Elhadidy</h1>
+                <div class="typed-container">
+                    <span id="typed"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <a href="https://drive.google.com/file/d/1PqceU2SrLL-X52_Rz_TWqlbIcqiB-aO1/view" 
+                   class="btn primary-btn" target="_blank">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </section>
+
+        <!-- About -->
+      <section id="about" class="section" data-aos="fade-up">
+    <h2 class="section-title">About Me</h2>
+    
+    <div class="about-container">
+        <!-- Optional: small profile image on the side (good for visual balance) -->
+        <div class="about-image">
+            <img src="img/profile.jpg" alt="Ahmed Elhadidy" loading="lazy" />
+        </div>
+
+        <div class="about-content">
+            <p class="intro">
+                Hi! I'm <span class="highlight">Ahmed Elhadidy</span>, a passionate <strong>Front-End Developer</strong> 
+                who loves crafting smooth, beautiful, and user-centered digital experiences.
+            </p>
+
+            <p>
+                With a strong mix of clean code and creative thinking, I turn ideas into responsive, 
+                high-performance websites and applications that actually feel good to use.
+            </p>
+
+            <p>
+                Currently working as a <strong>freelancer</strong>, I focus on:
+            </p>
+
+            <ul class="about-list">
+                <li>Modern & responsive user interfaces</li>
+                <li>Performance optimization & accessibility</li>
+                <li>Clean, maintainable code with current best practices</li>
+                <li>Turning complex requirements into simple, intuitive experiences</li>
+            </ul>
+
+            <p class="closing">
+                Always excited about new technologies, clean design systems, and creating products 
+                people love to use. Let's build something great together!
+            </p>
+        </div>
+    </div>
+</section>
+<section id="education" class="section" data-aos="fade-up">
+    <h2 class="section-title">Education & Certifications</h2>
+    
+    <div class="timeline education-timeline">
+        <!-- Most Recent / Most Relevant First -->
+        <div class="timeline-item">
+            <div class="timeline-date">Dec 2022 – Jan 2023</div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h3>Responsive Website Basics</h3>
+                    <span class="timeline-company">Online Course Certification</span>
+                </div>
+                <p class="timeline-description">
+                    Intensive training in building responsive websites using HTML, CSS, and JavaScript fundamentals.
+                </p>
+                <div class="timeline-links">
+                    <a href="https://www.coursera.org/account/accomplishments/verify/P3FFK9H3RNYR" 
+                       target="_blank" class="btn secondary-btn small-btn">
+                        View Certificate
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2018 – 2022</div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h3>Bachelor's Degree in Arabic Language</h3>
+                    <span class="timeline-company">Al-Azhar University</span>
+                </div>
+                <p class="timeline-description">
+                    Formal university education that strengthened my analytical thinking, research skills, 
+                    and attention to detail — all of which I apply daily in writing clean, maintainable code.
+                </p>
+                <p class="timeline-note">
+                    <em>Transitioned to tech through self-study and practical web development projects.</em>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Experience -->
+        <section id="experience" class="section" data-aos="fade-up">
+    <h2 class="section-title">Experience</h2>
+    
+    <div class="timeline">
+        <!-- Most Recent Experience -->
+        <div class="timeline-item">
+            <div class="timeline-date">January 2023 – Present</div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h3>Front-End Developer</h3>
+                    <span class="timeline-company">Freelance</span>
+                </div>
+                <p class="timeline-description">
+                    Designing and developing responsive, high-performance websites and web applications 
+                    using modern front-end technologies.
+                </p>
+                <ul class="timeline-highlights">
+                    <li>Build pixel-perfect, cross-browser compatible interfaces with HTML5, CSS3, and JavaScript</li>
+                    <li>Implement responsive designs using modern frameworks (Bootstrap, Tailwind CSS)</li>
+                    <li>Optimize website performance, accessibility and SEO</li>
+                    <li>Collaborate directly with clients to translate business requirements into functional UIs</li>
+                    <li>Work with Git for version control and GitHub for project management & deployment</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Previous Experience (example - customize or remove) -->
+        <div class="timeline-item">
+            <div class="timeline-date">2020 – 2022</div>
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <h3>Web Development & IT Support</h3>
+                    <span class="timeline-company">Various Projects & Self-learning</span>
+                </div>
+                <p class="timeline-description">
+                    Intensive self-learning and hands-on projects that built the foundation for professional front-end development.
+                </p>
+                <ul class="timeline-highlights">
+                    <li>Completed multiple responsive website projects from design to deployment</li>
+                    <li>Learned modern JavaScript (ES6+), DOM manipulation, and asynchronous programming</li>
+                    <li>Built strong understanding of UI/UX principles and best practices</li>
+                    <li>Developed problem-solving skills through personal and freelance projects</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- You can continue adding older experiences here -->
+    </div>
+</section>
+
+        <!-- Skills -->
+        <section id="skills" class="section" data-aos="fade-up">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="fab fa-angular"></i><span>Angular</span></div>
+                <div class="skill-card"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
+                <div class="skill-card"><i class="fas fa-code-branch"></i><span>Git & GitHub</span></div>
+                <div class="skill-card"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
+                <div class="skill-card"><i class="fas fa-users"></i><span>Teamwork</span></div>
+                <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>Responsive Design</span></div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="section" data-aos="fade-up">
+            <h2 class="section-title">Portfolio</h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3" data-tilt-glare-on-mouse-leave="true">
+                    <div class="portfolio-img">
+                        <img src="img/portfolio-1.jpg" alt="Elhadidy World" loading="lazy"/>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Elhadidy World</h3>
+                                <p class="tech-stack">HTML • CSS • JavaScript • Responsive</p>
+                                <p class="description">Interactive personal website with modern design and smooth animations</p>
+                                <div class="portfolio-buttons">
+                                    <a href="https://ahmed-elhadidy20.github.io/Elhadidy_World/" target="_blank" class="btn primary-btn">Live Demo</a>
+                                    <a href="https://github.com/Ahmed-Elhadidy20/Elhadidy_World" target="_blank" class="btn secondary-btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
+                    <div class="portfolio-img">
+                        <img src="img/portfolio-2.jpg" alt="ElH-didi" loading="lazy"/>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>ElH-didi</h3>
+                                <p class="tech-stack">Bootstrap • JavaScript • Modern UI</p>
+                                <p class="description">Clean, fast and responsive website design with professional touches</p>
+                                <div class="portfolio-buttons">
+                                    <a href="https://ahmed-elhadidy20.github.io/ElH-didi/" target="_blank" class="btn primary-btn">Live Demo</a>
+                                    <a href="https://github.com/Ahmed-Elhadidy20/ElH-didi" target="_blank" class="btn secondary-btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
+                    <div class="portfolio-img">
+                        <img src="img/portfolio-3.jpg" alt="Bondi" loading="lazy"/>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Bondi</h3>
+                                <p class="tech-stack">HTML • CSS • JavaScript</p>
+                                <p class="description">Responsive template with modern and clean design</p>
+                                <div class="portfolio-buttons">
+                                    <a href="https://ahmed-elhadidy20.github.io/bondi/" target="_blank" class="btn primary-btn">Live Demo</a>
+                                    <a href="https://github.com/Ahmed-Elhadidy20/bondi" target="_blank" class="btn secondary-btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
+                    <div class="portfolio-img">
+                        <img src="img/portfolio-4.jpg" alt="Bondi" loading="lazy"/>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Myproject</h3>
+                                <p class="tech-stack">HTML • CSS • JavaScript</p>
+                                <p class="description">Responsive template with modern and clean design</p>
+                                <div class="portfolio-buttons">
+                                    <a href="https://ahmed-elhadidy20.github.io/Myproject/" target="_blank" class="btn primary-btn">Live Demo</a>
+                                    <a href="https://github.com/Ahmed-Elhadidy20/Myproject" target="_blank" class="btn secondary-btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
+                    <div class="portfolio-img">
+                        <img src="img/portfolio-5.jpg" alt="Bondi" loading="lazy"/>
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Shoping</h3>
+                                <p class="tech-stack">HTML • CSS • JavaScript</p>
+                                <p class="description">Responsive template with modern and clean design</p>
+                                <div class="portfolio-buttons">
+                                    <a href="https://ahmed-elhadidy20.github.io/shoping/" target="_blank" class="btn primary-btn">Live Demo</a>
+                                    <a href="https://github.com/Ahmed-Elhadidy20/shoping" target="_blank" class="btn secondary-btn">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section contact-section" data-aos="fade-up">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> aalhdidy4@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +20 100 041 2617</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mansoura, Dakahlia, Egypt</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2023 Ahmed Elhadidy - All Rights Reserved</p>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
