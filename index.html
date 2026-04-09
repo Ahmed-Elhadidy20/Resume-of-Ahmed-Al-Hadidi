@@ -1,333 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ahmed Elhadidy | Front-End Developer</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="img/favicon.ico"/>
-    
-    <!-- Google Fonts - Cairo -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-    
-    <!-- AOS for scroll animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./images/bag-shopping-solid.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/pages/index.css">
+  <link rel="stylesheet" href="css/pages/footer.css">
+  <link rel="stylesheet" href="css/cart-drawer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>متجر الحديدي</title>
 </head>
+
 <body>
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
-    </button>
 
-    <!-- Sidebar / Navigation -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <img src="img/profile.jpg" alt="Ahmed Elhadidy" class="profile-img"/>
-            <h3>Ahmed Elhadidy</h3>
-            <p>Front-End Developer</p>
+  <div class="top-img">
+    <header id="head" class="flex">
+      <div class="logo">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>الحديدي</span>
+        <p>شوبينج</p>
+      </div>
+      <div class="links">
+        <button class="cart" id="cart-btn" onclick="openCart()">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="header-total">0.00 ج.م</span>
+          <span class="proudct-number" id="header-count">0</span>
+        </button>
+        <a href="./pages/signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>تسجيل الدخول</a>
+        <a href="./pages/register.html" class="register"><i class="fa-solid fa-user-plus"></i>إنشاء حساب</a>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="lifestyle">مجموعة الموضة</div>
+      <div class="men">رجالي</div>
+      <div class="sale">خصم يصل إلى
+        <span>30%</span>
+      </div>
+      <div class="get-free">شحن مجاني على الطلبات فوق
+        <span>99.00 ج.م</span>
+      </div>
+      <button onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})">تسوق الآن</button>
+    </section>
+  </div>
+
+  <!-- قسم إضافة منتج -->
+  <section class="add-product-section" id="add-section">
+    <div class="add-product-inner">
+      <h2><i class="fa-solid fa-circle-plus"></i> إضافة منتج جديد</h2>
+      <p class="add-sub">أضف منتجاتك للمتجر بسهولة من هنا</p>
+      <div class="add-form-grid">
+        <div class="form-grp">
+          <label>اسم المنتج *</label>
+          <input type="text" id="inp-name" placeholder="مثال: حذاء رياضي" />
         </div>
-        
-        <nav class="sidebar-nav">
-            <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-            <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
-            <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
-            <a href="#skills" class="nav-link"><i class="fas fa-tools"></i> Skills</a>
-            <a href="#portfolio" class="nav-link"><i class="fas fa-laptop-code"></i> Portfolio</a>
-            <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
-        
-        <div class="sidebar-social">
-            <a href="https://github.com/Ahmed-Elhadidy20" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/ahmed-elhdidy-81307035a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://twitter.com/AhmedEl43873886" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <div class="form-grp">
+          <label>السعر (ج.م) *</label>
+          <input type="number" id="inp-price" placeholder="250" min="1" />
         </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero -->
-        <section id="home" class="hero">
-            <div class="hero-content" data-aos="fade-up">
-                <p class="greeting">Hello, I'm</p>
-                <h1>Ahmed Elhadidy</h1>
-                <div class="typed-container">
-                    <span id="typed"></span>
-                    <span class="cursor">|</span>
-                </div>
-                <a href="https://drive.google.com/file/d/1PqceU2SrLL-X52_Rz_TWqlbIcqiB-aO1/view" 
-                   class="btn primary-btn" target="_blank">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
-            </div>
-        </section>
-
-        <!-- About -->
-      <section id="about" class="section" data-aos="fade-up">
-    <h2 class="section-title">About Me</h2>
-    
-    <div class="about-container">
-        <!-- Optional: small profile image on the side (good for visual balance) -->
-        <div class="about-image">
-            <img src="img/profile.jpg" alt="Ahmed Elhadidy" loading="lazy" />
+        <div class="form-grp">
+          <label>الفئة</label>
+          <select id="inp-cat">
+            <option value="عام">عام</option>
+            <option value="أحذية">أحذية</option>
+            <option value="حقائب">حقائب</option>
+            <option value="ملابس">ملابس</option>
+            <option value="إكسسوارات">إكسسوارات</option>
+            <option value="أحزمة">أحزمة</option>
+            <option value="قبعات">قبعات</option>
+            <option value="نظارات">نظارات</option>
+            <option value="محافظ">محافظ</option>
+          </select>
         </div>
-
-        <div class="about-content">
-            <p class="intro">
-                Hi! I'm <span class="highlight">Ahmed Elhadidy</span>, a passionate <strong>Front-End Developer</strong> 
-                who loves crafting smooth, beautiful, and user-centered digital experiences.
-            </p>
-
-            <p>
-                With a strong mix of clean code and creative thinking, I turn ideas into responsive, 
-                high-performance websites and applications that actually feel good to use.
-            </p>
-
-            <p>
-                Currently working as a <strong>freelancer</strong>, I focus on:
-            </p>
-
-            <ul class="about-list">
-                <li>Modern & responsive user interfaces</li>
-                <li>Performance optimization & accessibility</li>
-                <li>Clean, maintainable code with current best practices</li>
-                <li>Turning complex requirements into simple, intuitive experiences</li>
-            </ul>
-
-            <p class="closing">
-                Always excited about new technologies, clean design systems, and creating products 
-                people love to use. Let's build something great together!
-            </p>
+        <div class="form-grp">
+          <label>وصف المنتج</label>
+          <input type="text" id="inp-desc" placeholder="وصف مختصر للمنتج" />
         </div>
+        <div class="form-grp">
+          <label>رابط الصورة (URL)</label>
+          <input type="url" id="inp-img-url" placeholder="https://..." oninput="previewFromUrl(this.value)" />
+          <div class="img-preview-box" id="url-preview">
+            <span><i class="fa-regular fa-image"></i> معاينة الصورة</span>
+          </div>
+        </div>
+        <div class="form-grp">
+          <label>أو ارفع صورة من جهازك</label>
+          <input type="file" id="inp-img-file" accept="image/*" onchange="previewFromFile(this)" />
+        </div>
+      </div>
+      <button class="btn-submit-product" onclick="addProduct()">
+        <i class="fa-solid fa-plus"></i> إضافة المنتج
+      </button>
     </div>
-</section>
-<section id="education" class="section" data-aos="fade-up">
-    <h2 class="section-title">Education & Certifications</h2>
-    
-    <div class="timeline education-timeline">
-        <!-- Most Recent / Most Relevant First -->
-        <div class="timeline-item">
-            <div class="timeline-date">Dec 2022 – Jan 2023</div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <h3>Responsive Website Basics</h3>
-                    <span class="timeline-company">Online Course Certification</span>
-                </div>
-                <p class="timeline-description">
-                    Intensive training in building responsive websites using HTML, CSS, and JavaScript fundamentals.
-                </p>
-                <div class="timeline-links">
-                    <a href="https://www.coursera.org/account/accomplishments/verify/P3FFK9H3RNYR" 
-                       target="_blank" class="btn secondary-btn small-btn">
-                        View Certificate
-                    </a>
-                </div>
-            </div>
-        </div>
+  </section>
 
-        <div class="timeline-item">
-            <div class="timeline-date">2018 – 2022</div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <h3>Bachelor's Degree in Arabic Language</h3>
-                    <span class="timeline-company">Al-Azhar University</span>
-                </div>
-                <p class="timeline-description">
-                    Formal university education that strengthened my analytical thinking, research skills, 
-                    and attention to detail — all of which I apply daily in writing clean, maintainable code.
-                </p>
-                <p class="timeline-note">
-                    <em>Transitioned to tech through self-study and practical web development projects.</em>
-                </p>
-            </div>
-        </div>
+  <main id="products-section">
+    <h1 class="recommended"><i class="fa-solid fa-check"></i> موصى به لك</h1>
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" onclick="filterProducts('الكل', this)">الكل</button>
     </div>
-</section>
+    <section class="proudcts flex" id="products-grid"></section>
+  </main>
 
-        <!-- Experience -->
-        <section id="experience" class="section" data-aos="fade-up">
-    <h2 class="section-title">Experience</h2>
-    
-    <div class="timeline">
-        <!-- Most Recent Experience -->
-        <div class="timeline-item">
-            <div class="timeline-date">January 2023 – Present</div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <h3>Front-End Developer</h3>
-                    <span class="timeline-company">Freelance</span>
-                </div>
-                <p class="timeline-description">
-                    Designing and developing responsive, high-performance websites and web applications 
-                    using modern front-end technologies.
-                </p>
-                <ul class="timeline-highlights">
-                    <li>Build pixel-perfect, cross-browser compatible interfaces with HTML5, CSS3, and JavaScript</li>
-                    <li>Implement responsive designs using modern frameworks (Bootstrap, Tailwind CSS)</li>
-                    <li>Optimize website performance, accessibility and SEO</li>
-                    <li>Collaborate directly with clients to translate business requirements into functional UIs</li>
-                    <li>Work with Git for version control and GitHub for project management & deployment</li>
-                </ul>
-            </div>
-        </div>
+  <footer>صُمم وطُوِّر بواسطة <span>أحمد الحديدي</span> © 2024</footer>
 
-        <!-- Previous Experience (example - customize or remove) -->
-        <div class="timeline-item">
-            <div class="timeline-date">2020 – 2022</div>
-            <div class="timeline-content">
-                <div class="timeline-header">
-                    <h3>Web Development & IT Support</h3>
-                    <span class="timeline-company">Various Projects & Self-learning</span>
-                </div>
-                <p class="timeline-description">
-                    Intensive self-learning and hands-on projects that built the foundation for professional front-end development.
-                </p>
-                <ul class="timeline-highlights">
-                    <li>Completed multiple responsive website projects from design to deployment</li>
-                    <li>Learned modern JavaScript (ES6+), DOM manipulation, and asynchronous programming</li>
-                    <li>Built strong understanding of UI/UX principles and best practices</li>
-                    <li>Developed problem-solving skills through personal and freelance projects</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- You can continue adding older experiences here -->
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2><i class="fa-solid fa-cart-shopping"></i> سلة المشتريات</h2>
+      <button class="btn-close-cart" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
     </div>
-</section>
+    <div class="cart-drawer-body" id="cart-body">
+      <div class="cart-empty-state">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <p>السلة فارغة</p>
+      </div>
+    </div>
+    <div class="cart-drawer-footer" id="cart-footer" style="display:none;">
+      <div class="cart-row"><span>المجموع الفرعي</span><strong id="cart-subtotal">0 ج.م</strong></div>
+      <div class="cart-row"><span>الشحن</span><strong id="cart-shipping">مجاني</strong></div>
+      <div class="cart-row total-row"><span>الإجمالي</span><strong id="cart-grand-total">0 ج.م</strong></div>
+      <button class="btn-checkout"><i class="fa-solid fa-lock"></i> إتمام الشراء</button>
+      <button class="btn-clear" onclick="clearCart()"><i class="fa-solid fa-trash-can"></i> إفراغ السلة</button>
+    </div>
+  </div>
 
-        <!-- Skills -->
-        <section id="skills" class="section" data-aos="fade-up">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                <div class="skill-card"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript</span></div>
-                <div class="skill-card"><i class="fab fa-angular"></i><span>Angular</span></div>
-                <div class="skill-card"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
-                <div class="skill-card"><i class="fas fa-code-branch"></i><span>Git & GitHub</span></div>
-                <div class="skill-card"><i class="fas fa-lightbulb"></i><span>Problem Solving</span></div>
-                <div class="skill-card"><i class="fas fa-users"></i><span>Teamwork</span></div>
-                <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>Responsive Design</span></div>
-            </div>
-        </section>
+  <div class="toast-msg" id="toast"><span id="toast-text"></span></div>
 
-        <!-- Portfolio -->
-        <section id="portfolio" class="section" data-aos="fade-up">
-            <h2 class="section-title">Portfolio</h2>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3" data-tilt-glare-on-mouse-leave="true">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-1.jpg" alt="Elhadidy World" loading="lazy"/>
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>Elhadidy World</h3>
-                                <p class="tech-stack">HTML • CSS • JavaScript • Responsive</p>
-                                <p class="description">Interactive personal website with modern design and smooth animations</p>
-                                <div class="portfolio-buttons">
-                                    <a href="https://ahmed-elhadidy20.github.io/Elhadidy_World/" target="_blank" class="btn primary-btn">Live Demo</a>
-                                    <a href="https://github.com/Ahmed-Elhadidy20/Elhadidy_World" target="_blank" class="btn secondary-btn">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-2.jpg" alt="ElH-didi" loading="lazy"/>
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>ElH-didi</h3>
-                                <p class="tech-stack">Bootstrap • JavaScript • Modern UI</p>
-                                <p class="description">Clean, fast and responsive website design with professional touches</p>
-                                <div class="portfolio-buttons">
-                                    <a href="https://ahmed-elhadidy20.github.io/ElH-didi/" target="_blank" class="btn primary-btn">Live Demo</a>
-                                    <a href="https://github.com/Ahmed-Elhadidy20/ElH-didi" target="_blank" class="btn secondary-btn">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-3.jpg" alt="Bondi" loading="lazy"/>
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>Bondi</h3>
-                                <p class="tech-stack">HTML • CSS • JavaScript</p>
-                                <p class="description">Responsive template with modern and clean design</p>
-                                <div class="portfolio-buttons">
-                                    <a href="https://ahmed-elhadidy20.github.io/bondi/" target="_blank" class="btn primary-btn">Live Demo</a>
-                                    <a href="https://github.com/Ahmed-Elhadidy20/bondi" target="_blank" class="btn secondary-btn">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-4.jpg" alt="Bondi" loading="lazy"/>
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>Myproject</h3>
-                                <p class="tech-stack">HTML • CSS • JavaScript</p>
-                                <p class="description">Responsive template with modern and clean design</p>
-                                <div class="portfolio-buttons">
-                                    <a href="https://ahmed-elhadidy20.github.io/Myproject/" target="_blank" class="btn primary-btn">Live Demo</a>
-                                    <a href="https://github.com/Ahmed-Elhadidy20/Myproject" target="_blank" class="btn secondary-btn">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-tilt data-tilt-max-glare="0.3">
-                    <div class="portfolio-img">
-                        <img src="img/portfolio-5.jpg" alt="Bondi" loading="lazy"/>
-                        <div class="portfolio-overlay">
-                            <div class="overlay-content">
-                                <h3>Shoping</h3>
-                                <p class="tech-stack">HTML • CSS • JavaScript</p>
-                                <p class="description">Responsive template with modern and clean design</p>
-                                <div class="portfolio-buttons">
-                                    <a href="https://ahmed-elhadidy20.github.io/shoping/" target="_blank" class="btn primary-btn">Live Demo</a>
-                                    <a href="https://github.com/Ahmed-Elhadidy20/shoping" target="_blank" class="btn secondary-btn">GitHub</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section contact-section" data-aos="fade-up">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> aalhdidy4@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +20 100 041 2617</p>
-                <p><i class="fas fa-map-marker-alt"></i> Mansoura, Dakahlia, Egypt</p>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <p>© 2023 Ahmed Elhadidy - All Rights Reserved</p>
-        </footer>
-    </main>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/store.js"></script>
 </body>
 </html>
