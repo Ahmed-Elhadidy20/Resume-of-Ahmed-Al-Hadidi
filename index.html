@@ -1,139 +1,455 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./images/bag-shopping-solid.svg" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/pages/index.css">
-  <link rel="stylesheet" href="css/pages/footer.css">
-  <link rel="stylesheet" href="css/cart-drawer.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>متجر الحديدي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>أحمد الحديدي | مطور Front-End</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-  <div class="top-img">
-    <header id="head" class="flex">
-      <div class="logo">
-        <i class="fa-solid fa-bag-shopping"></i>
-        <span>الحديدي</span>
-        <p>شوبينج</p>
-      </div>
-      <div class="links">
-        <button class="cart" id="cart-btn" onclick="openCart()">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span id="header-total">0.00 ج.م</span>
-          <span class="proudct-number" id="header-count">0</span>
-        </button>
-        <a href="./pages/signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>تسجيل الدخول</a>
-        <a href="./pages/register.html" class="register"><i class="fa-solid fa-user-plus"></i>إنشاء حساب</a>
-      </div>
-    </header>
-
-    <section class="content">
-      <div class="lifestyle">مجموعة الموضة</div>
-      <div class="men">رجالي</div>
-      <div class="sale">خصم يصل إلى
-        <span>30%</span>
-      </div>
-      <div class="get-free">شحن مجاني على الطلبات فوق
-        <span>99.00 ج.م</span>
-      </div>
-      <button onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})">تسوق الآن</button>
-    </section>
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('ar')">عربي</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
   </div>
 
-  <!-- قسم إضافة منتج -->
-  <section class="add-product-section" id="add-section">
-    <div class="add-product-inner">
-      <h2><i class="fa-solid fa-circle-plus"></i> إضافة منتج جديد</h2>
-      <p class="add-sub">أضف منتجاتك للمتجر بسهولة من هنا</p>
-      <div class="add-form-grid">
-        <div class="form-grp">
-          <label>اسم المنتج *</label>
-          <input type="text" id="inp-name" placeholder="مثال: حذاء رياضي" />
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile-ring">
+      <img src="img/profile.jpg" alt="Ahmed Elhadidy" onerror="this.src='https://ui-avatars.com/api/?name=Ahmed+Elhadidy&background=00e5ff&color=000&size=200'"/>
+    </div>
+    <div class="sidebar-name">
+      <span class="ar">أحمد الحديدي</span>
+      <span class="en" style="display:none">Ahmed Elhadidy</span>
+    </div>
+    <div class="sidebar-title">Front-End Developer</div>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span class="ar">متاح للعمل</span>
+      <span class="en" style="display:none">Available for work</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#home" class="nav-link active"><i class="fas fa-home"></i><span class="ar">الرئيسية</span><span class="en" style="display:none">Home</span></a>
+      <a href="#about" class="nav-link"><i class="fas fa-user"></i><span class="ar">عني</span><span class="en" style="display:none">About</span></a>
+      <a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i><span class="ar">الخبرة</span><span class="en" style="display:none">Experience</span></a>
+      <a href="#skills" class="nav-link"><i class="fas fa-tools"></i><span class="ar">المهارات</span><span class="en" style="display:none">Skills</span></a>
+      <a href="#portfolio" class="nav-link"><i class="fas fa-laptop-code"></i><span class="ar">الأعمال</span><span class="en" style="display:none">Portfolio</span></a>
+      <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i><span class="ar">تواصل</span><span class="en" style="display:none">Contact</span></a>
+    </nav>
+    <div class="sidebar-social">
+      <a href="https://github.com/Ahmed-Elhadidy20" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ahmed-elhdidy-81307035a/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://twitter.com/AhmedEl43873886" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="status-dot"></span>
+          <span class="ar">مطور Front-End • مصر</span>
+          <span class="en" style="display:none">Front-End Developer • Egypt</span>
         </div>
-        <div class="form-grp">
-          <label>السعر (ج.م) *</label>
-          <input type="number" id="inp-price" placeholder="250" min="1" />
+        <h1 class="ar">
+          أهلاً، أنا<br>
+          <span class="highlight">أحمد الحديدي</span>
+        </h1>
+        <h1 class="en" style="display:none">
+          Hello, I'm<br>
+          <span class="highlight">Ahmed Elhadidy</span>
+        </h1>
+        <p class="hero-desc ar">
+          مطور Front-End شغوف بصناعة تجارب رقمية جميلة وسلسة. أحوّل الأفكار إلى واجهات متجاوبة وعالية الأداء تُحدث فرقاً حقيقياً.
+        </p>
+        <p class="hero-desc en" style="display:none">
+          Passionate Front-End Developer who crafts smooth, beautiful digital experiences. I turn ideas into responsive, high-performance interfaces that make a real difference.
+        </p>
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn btn-primary">
+            <i class="fas fa-eye"></i>
+            <span class="ar">شاهد أعمالي</span>
+            <span class="en" style="display:none">View My Work</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-paper-plane"></i>
+            <span class="ar">تواصل معي</span>
+            <span class="en" style="display:none">Contact Me</span>
+          </a>
         </div>
-        <div class="form-grp">
-          <label>الفئة</label>
-          <select id="inp-cat">
-            <option value="عام">عام</option>
-            <option value="أحذية">أحذية</option>
-            <option value="حقائب">حقائب</option>
-            <option value="ملابس">ملابس</option>
-            <option value="إكسسوارات">إكسسوارات</option>
-            <option value="أحزمة">أحزمة</option>
-            <option value="قبعات">قبعات</option>
-            <option value="نظارات">نظارات</option>
-            <option value="محافظ">محافظ</option>
-          </select>
+      </div>
+
+      <div class="floating-card" style="position:absolute; top:22%; left:5%; right:auto;">
+        <div class="card-label">PROJECTS</div>
+        <div class="card-value">+10</div>
+      </div>
+      <div class="floating-card" style="position:absolute; bottom:22%; left:8%; right:auto;">
+        <div class="card-label">EXPERIENCE</div>
+        <div class="card-value ar">3+ سنوات</div>
+        <div class="card-value en" style="display:none">3+ Years</div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow ar">// عن أحمد</div>
+        <div class="section-eyebrow en" style="display:none">// ABOUT ME</div>
+        <h2 class="section-title ar">من أنا؟</h2>
+        <h2 class="section-title en" style="display:none">Who I Am</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="ar">
+            أنا <strong>أحمد الحديدي</strong>، مطور Front-End شغوف من <span class="highlight">المنصورة، مصر</span>. أجمع بين الكود النظيف والتفكير الإبداعي لأبني مواقع وتطبيقات ويب تبدو رائعة وتعمل بشكل ممتاز.
+          </p>
+          <p class="ar">
+            خلفيتي الأكاديمية في <strong>اللغة العربية</strong> من جامعة الأزهر منحتني قدرات تحليلية قوية واهتماماً بالتفاصيل — وهي مهارات أطبقها يومياً في كتابة كود نظيف وقابل للصيانة.
+          </p>
+          <p class="ar">
+            انتقلت إلى مجال التكنولوجيا عبر الدراسة الذاتية والمشاريع العملية، وحالياً أعمل كـ <span class="highlight">Freelancer</span> مع تركيز على إنشاء واجهات مستخدم حديثة وعالية الأداء.
+          </p>
+          <p class="en" style="display:none">
+            I'm <strong>Ahmed Elhadidy</strong>, a passionate Front-End Developer from <span class="highlight">Mansoura, Egypt</span>. I combine clean code with creative thinking to build websites and web apps that look great and perform excellently.
+          </p>
+          <p class="en" style="display:none">
+            My academic background in <strong>Arabic Language</strong> from Al-Azhar University gave me strong analytical abilities and attention to detail — skills I apply daily in writing clean, maintainable code.
+          </p>
+          <p class="en" style="display:none">
+            I transitioned to tech through self-study and hands-on projects, and I currently work as a <span class="highlight">Freelancer</span> focused on building modern, high-performance user interfaces.
+          </p>
         </div>
-        <div class="form-grp">
-          <label>وصف المنتج</label>
-          <input type="text" id="inp-desc" placeholder="وصف مختصر للمنتج" />
-        </div>
-        <div class="form-grp">
-          <label>رابط الصورة (URL)</label>
-          <input type="url" id="inp-img-url" placeholder="https://..." oninput="previewFromUrl(this.value)" />
-          <div class="img-preview-box" id="url-preview">
-            <span><i class="fa-regular fa-image"></i> معاينة الصورة</span>
+        <div class="info-cards">
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="label">LOCATION</div>
+            <div class="value ar">المنصورة، مصر</div>
+            <div class="value en" style="display:none">Mansoura, Egypt</div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-graduation-cap"></i>
+            <div class="label">EDUCATION</div>
+            <div class="value ar">جامعة الأزهر</div>
+            <div class="value en" style="display:none">Al-Azhar University</div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-language"></i>
+            <div class="label">LANGUAGES</div>
+            <div class="value ar">عربي • إنجليزي</div>
+            <div class="value en" style="display:none">Arabic • English</div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-briefcase"></i>
+            <div class="label">TYPE</div>
+            <div class="value ar">Freelancer</div>
+            <div class="value en" style="display:none">Freelancer</div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-calendar"></i>
+            <div class="label">EXPERIENCE</div>
+            <div class="value ar">+3 سنوات</div>
+            <div class="value en" style="display:none">3+ Years</div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-certificate"></i>
+            <div class="label">CERTIFIED</div>
+            <div class="value">Coursera ✓</div>
           </div>
         </div>
-        <div class="form-grp">
-          <label>أو ارفع صورة من جهازك</label>
-          <input type="file" id="inp-img-file" accept="image/*" onchange="previewFromFile(this)" />
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow ar">// مسيرتي المهنية</div>
+        <div class="section-eyebrow en" style="display:none">// MY JOURNEY</div>
+        <h2 class="section-title ar">الخبرة والتعليم</h2>
+        <h2 class="section-title en" style="display:none">Experience & Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-date">يناير 2023 – حتى الآن &nbsp;|&nbsp; Jan 2023 – Present</div>
+          <div class="timeline-card">
+            <h3><span class="ar">مطور Front-End</span><span class="en" style="display:none">Front-End Developer</span></h3>
+            <div class="timeline-company">Freelance</div>
+            <p class="timeline-desc ar">
+              تصميم وتطوير مواقع وتطبيقات ويب متجاوبة وعالية الأداء باستخدام أحدث تقنيات Front-End. التعاون المباشر مع العملاء لتحويل متطلبات الأعمال إلى واجهات مستخدم عملية وجذابة.
+            </p>
+            <p class="timeline-desc en" style="display:none">
+              Designing and developing responsive, high-performance websites and web applications using modern front-end technologies. Collaborating directly with clients to translate business requirements into functional and attractive UIs.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Angular</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2020 – 2022</div>
+          <div class="timeline-card">
+            <h3><span class="ar">تطوير ذاتي ومشاريع عملية</span><span class="en" style="display:none">Self-Learning & Hands-on Projects</span></h3>
+            <div class="timeline-company ar">مشاريع متنوعة</div>
+            <div class="timeline-company en" style="display:none">Various Projects</div>
+            <p class="timeline-desc ar">
+              تدريب مكثف وبناء أساس متين في تطوير الواجهات الأمامية من خلال مشاريع شخصية وعملية متعددة.
+            </p>
+            <p class="timeline-desc en" style="display:none">
+              Intensive self-learning and building a strong foundation in front-end development through multiple personal and practical projects.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">ES6+</span>
+              <span class="tag">DOM</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">ديسمبر 2022 – يناير 2023</div>
+          <div class="timeline-card">
+            <h3><span class="ar">شهادة: أساسيات المواقع المتجاوبة</span><span class="en" style="display:none">Certification: Responsive Website Basics</span></h3>
+            <div class="timeline-company">Coursera</div>
+            <p class="timeline-desc ar">
+              تدريب مكثف على بناء مواقع متجاوبة باستخدام HTML و CSS وأساسيات JavaScript.
+            </p>
+            <p class="timeline-desc en" style="display:none">
+              Intensive training on building responsive websites using HTML, CSS, and JavaScript fundamentals.
+            </p>
+            <div class="timeline-tags">
+              <a href="https://www.coursera.org/account/accomplishments/verify/P3FFK9H3RNYR" target="_blank" class="tag" style="text-decoration:none; cursor:pointer;">
+                <i class="fas fa-external-link-alt"></i> View Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2018 – 2022</div>
+          <div class="timeline-card">
+            <h3><span class="ar">بكالوريوس اللغة العربية</span><span class="en" style="display:none">Bachelor's Degree in Arabic Language</span></h3>
+            <div class="timeline-company ar">جامعة الأزهر</div>
+            <div class="timeline-company en" style="display:none">Al-Azhar University</div>
+            <p class="timeline-desc ar">
+              تعليم أكاديمي عزّز قدراتي التحليلية ومهارات البحث والاهتمام بالتفاصيل — وهي صفات أطبقها يومياً في العمل البرمجي.
+            </p>
+            <p class="timeline-desc en" style="display:none">
+              Formal academic education that strengthened analytical thinking, research skills, and attention to detail — qualities I apply daily in development work.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow ar">// ترسانة الأدوات</div>
+        <div class="section-eyebrow en" style="display:none">// TECH STACK</div>
+        <h2 class="section-title ar">المهارات التقنية</h2>
+        <h2 class="section-title en" style="display:none">Technical Skills</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fab fa-html5" style="color:#e34f26"></i><span>HTML5</span><div class="skill-level"><div class="skill-fill" style="width:95%"></div></div></div>
+        <div class="skill-card"><i class="fab fa-css3-alt" style="color:#264de4"></i><span>CSS3</span><div class="skill-level"><div class="skill-fill" style="width:92%"></div></div></div>
+        <div class="skill-card"><i class="fab fa-js" style="color:#f7df1e"></i><span>JavaScript</span><div class="skill-level"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-card"><i class="fab fa-angular" style="color:#dd0031"></i><span>Angular</span><div class="skill-level"><div class="skill-fill" style="width:75%"></div></div></div>
+        <div class="skill-card"><i class="fab fa-bootstrap" style="color:#7952b3"></i><span>Bootstrap</span><div class="skill-level"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-card"><i class="fas fa-wind" style="color:#38bdf8"></i><span>Tailwind CSS</span><div class="skill-level"><div class="skill-fill" style="width:80%"></div></div></div>
+        <div class="skill-card"><i class="fab fa-git-alt" style="color:#f05032"></i><span>Git & GitHub</span><div class="skill-level"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-card"><i class="fas fa-mobile-alt"></i><span>Responsive Design</span><div class="skill-level"><div class="skill-fill" style="width:95%"></div></div></div>
+        <div class="skill-card"><i class="fas fa-universal-access"></i><span>Accessibility</span><div class="skill-level"><div class="skill-fill" style="width:78%"></div></div></div>
+        <div class="skill-card"><i class="fas fa-search"></i><span>SEO</span><div class="skill-level"><div class="skill-fill" style="width:72%"></div></div></div>
+        <div class="skill-card"><i class="fas fa-lightbulb"></i><span><span class="ar">حل المشكلات</span><span class="en" style="display:none">Problem Solving</span></span><div class="skill-level"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-card"><i class="fas fa-users"></i><span><span class="ar">العمل الجماعي</span><span class="en" style="display:none">Teamwork</span></span><div class="skill-level"><div class="skill-fill" style="width:90%"></div></div></div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow ar">// ما بنيته</div>
+        <div class="section-eyebrow en" style="display:none">// WHAT I BUILT</div>
+        <h2 class="section-title ar">معرض الأعمال</h2>
+        <h2 class="section-title en" style="display:none">Portfolio</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="portfolio-grid">
+
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/portfolio-1.jpg" alt="Elhadidy World" loading="lazy" onerror="this.parentElement.style.background='#1a1a25'; this.style.display='none'"/>
+          </div>
+          <div class="portfolio-body">
+            <h3>Elhadidy World</h3>
+            <p><span class="ar">موقع شخصي تفاعلي بتصميم عصري وانيميشن سلس</span><span class="en" style="display:none">Interactive personal website with modern design and smooth animations</span></p>
+            <div class="timeline-tags" style="margin-bottom:12px">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://ahmed-elhadidy20.github.io/Elhadidy_World/" target="_blank" class="link-demo"><i class="fas fa-eye"></i> Demo</a>
+              <a href="https://github.com/Ahmed-Elhadidy20/Elhadidy_World" target="_blank" class="link-code"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/portfolio-2.jpg" alt="ElH-didi" loading="lazy" onerror="this.parentElement.style.background='#1a1a25'; this.style.display='none'"/>
+          </div>
+          <div class="portfolio-body">
+            <h3>ElH-didi</h3>
+            <p><span class="ar">تصميم نظيف وسريع ومتجاوب بلمسات احترافية</span><span class="en" style="display:none">Clean, fast and responsive website design with professional touches</span></p>
+            <div class="timeline-tags" style="margin-bottom:12px">
+              <span class="tag">Bootstrap</span><span class="tag">JS</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://ahmed-elhadidy20.github.io/ElH-didi/" target="_blank" class="link-demo"><i class="fas fa-eye"></i> Demo</a>
+              <a href="https://github.com/Ahmed-Elhadidy20/ElH-didi" target="_blank" class="link-code"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/portfolio-3.jpg" alt="Bondi" loading="lazy" onerror="this.parentElement.style.background='#1a1a25'; this.style.display='none'"/>
+          </div>
+          <div class="portfolio-body">
+            <h3>Bondi</h3>
+            <p><span class="ar">قالب متجاوب بتصميم عصري ونظيف</span><span class="en" style="display:none">Responsive template with modern and clean design</span></p>
+            <div class="timeline-tags" style="margin-bottom:12px">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://ahmed-elhadidy20.github.io/bondi/" target="_blank" class="link-demo"><i class="fas fa-eye"></i> Demo</a>
+              <a href="https://github.com/Ahmed-Elhadidy20/bondi" target="_blank" class="link-code"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/portfolio-4.jpg" alt="Myproject" loading="lazy" onerror="this.parentElement.style.background='#1a1a25'; this.style.display='none'"/>
+          </div>
+          <div class="portfolio-body">
+            <h3>Myproject</h3>
+            <p><span class="ar">قالب متجاوب بتصميم عصري ونظيف</span><span class="en" style="display:none">Responsive template with modern and clean design</span></p>
+            <div class="timeline-tags" style="margin-bottom:12px">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://ahmed-elhadidy20.github.io/Myproject/" target="_blank" class="link-demo"><i class="fas fa-eye"></i> Demo</a>
+              <a href="https://github.com/Ahmed-Elhadidy20/Myproject" target="_blank" class="link-code"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="img/portfolio-5.jpg" alt="Shopping" loading="lazy" onerror="this.parentElement.style.background='#1a1a25'; this.style.display='none'"/>
+          </div>
+          <div class="portfolio-body">
+            <h3>Shopping</h3>
+            <p><span class="ar">قالب متجر إلكتروني متجاوب</span><span class="en" style="display:none">Responsive e-commerce template</span></p>
+            <div class="timeline-tags" style="margin-bottom:12px">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <div class="portfolio-links">
+              <a href="https://ahmed-elhadidy20.github.io/shoping/" target="_blank" class="link-demo"><i class="fas fa-eye"></i> Demo</a>
+              <a href="https://github.com/Ahmed-Elhadidy20/shoping" target="_blank" class="link-code"><i class="fab fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <div class="section-eyebrow ar">// لنتواصل</div>
+        <div class="section-eyebrow en" style="display:none">// LET'S CONNECT</div>
+        <h2 class="section-title ar">تواصل معي</h2>
+        <h2 class="section-title en" style="display:none">Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <a href="mailto:aalhdidy4@gmail.com" class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="contact-label">EMAIL</div>
+              <div class="contact-value">aalhdidy4@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+201000412617" class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="contact-label">PHONE</div>
+              <div class="contact-value">+20 100 041 2617</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="contact-label">LOCATION</div>
+              <div class="contact-value ar">المنصورة، الدقهلية، مصر</div>
+              <div class="contact-value en" style="display:none">Mansoura, Dakahlia, Egypt</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="https://github.com/Ahmed-Elhadidy20" target="_blank" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <div class="contact-label">GITHUB</div>
+              <div class="contact-value">Ahmed-Elhadidy20</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/ahmed-elhdidy-81307035a/" target="_blank" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <div class="contact-label">LINKEDIN</div>
+              <div class="contact-value">ahmed-elhdidy</div>
+            </div>
+          </a>
+          <a href="https://twitter.com/AhmedEl43873886" target="_blank" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-twitter"></i></div>
+            <div>
+              <div class="contact-label">TWITTER</div>
+              <div class="contact-value">@AhmedEl43873886</div>
+            </div>
+          </a>
         </div>
       </div>
-      <button class="btn-submit-product" onclick="addProduct()">
-        <i class="fa-solid fa-plus"></i> إضافة المنتج
-      </button>
-    </div>
-  </section>
+    </section>
 
-  <main id="products-section">
-    <h1 class="recommended"><i class="fa-solid fa-check"></i> موصى به لك</h1>
-    <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" onclick="filterProducts('الكل', this)">الكل</button>
-    </div>
-    <section class="proudcts flex" id="products-grid"></section>
+    <footer>
+      <span class="ar">© 2025 أحمد الحديدي — جميع الحقوق محفوظة</span>
+      <span class="en" style="display:none">© 2025 Ahmed Elhadidy — All Rights Reserved</span>
+    </footer>
+
   </main>
 
-  <footer>صُمم وطُوِّر بواسطة <span>أحمد الحديدي</span> © 2024</footer>
-
-  <!-- Cart Drawer -->
-  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
-  <div class="cart-drawer" id="cart-drawer">
-    <div class="cart-drawer-header">
-      <h2><i class="fa-solid fa-cart-shopping"></i> سلة المشتريات</h2>
-      <button class="btn-close-cart" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="cart-drawer-body" id="cart-body">
-      <div class="cart-empty-state">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <p>السلة فارغة</p>
-      </div>
-    </div>
-    <div class="cart-drawer-footer" id="cart-footer" style="display:none;">
-      <div class="cart-row"><span>المجموع الفرعي</span><strong id="cart-subtotal">0 ج.م</strong></div>
-      <div class="cart-row"><span>الشحن</span><strong id="cart-shipping">مجاني</strong></div>
-      <div class="cart-row total-row"><span>الإجمالي</span><strong id="cart-grand-total">0 ج.م</strong></div>
-      <button class="btn-checkout"><i class="fa-solid fa-lock"></i> إتمام الشراء</button>
-      <button class="btn-clear" onclick="clearCart()"><i class="fa-solid fa-trash-can"></i> إفراغ السلة</button>
-    </div>
-  </div>
-
-  <div class="toast-msg" id="toast"><span id="toast-text"></span></div>
-
   <script src="js/main.js"></script>
-  <script src="js/store.js"></script>
 </body>
 </html>
