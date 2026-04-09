@@ -1,62 +1,56 @@
-// AOS Initialization
-AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100
-});
+function setLang(lang) {
+  const body = document.body;
+  const arEls = document.querySelectorAll('.ar');
+  const enEls = document.querySelectorAll('.en');
+  const btns = document.querySelectorAll('.lang-btn');
 
-// Typed.js
-new Typed('#typed', {
-    strings: [
-        'Front-End Developer',
-        'UI/UX Enthusiast',
-        'Responsive Web Designer',
-        'Passionate Coder'
-    ],
-    typeSpeed: 70,
-    backSpeed: 50,
-    backDelay: 1800,
-    loop: true
-});
-
-// Mobile Menu Toggle
-const mobileBtn = document.getElementById('mobileMenuBtn');
-const sidebar = document.getElementById('sidebar');
-
-mobileBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        sidebar.classList.remove('active');
+  if (lang === 'en') {
+    body.classList.add('lang-en');
+    body.setAttribute('dir', 'ltr');
+    body.setAttribute('lang', 'en');
+    arEls.forEach(el => el.style.display = 'none');
+    enEls.forEach(el => {
+      el.style.display = el.classList.contains('inline') ? 'inline' : 'block';
     });
-});
-
-// Active nav link on scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const scrollPos = window.scrollY + 100;
-
-    sections.forEach(section => {
-        if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
-            const id = section.getAttribute('id');
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${id}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
+    btns[0].classList.remove('active');
+    btns[1].classList.add('active');
+  } else {
+    body.classList.remove('lang-en');
+    body.setAttribute('dir', 'rtl');
+    body.setAttribute('lang', 'ar');
+    arEls.forEach(el => {
+      el.style.display = el.classList.contains('inline') ? 'inline' : 'block';
     });
-});
+    enEls.forEach(el => el.style.display = 'none');
+    btns[0].classList.add('active');
+    btns[1].classList.remove('active');
+  }
+}
 
-// Vanilla Tilt initialization
-VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-    max: 12,
-    speed: 400,
-    glare: true,
-    "max-glare": 0.35,
-    perspective: 1000
-});
+// Active nav on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => observer.observe(s));
+
+// Animate skill bars on scroll
+const skillBars = document.querySelectorAll('.skill-fill');
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const width = e.target.style.width;
+      e.target.style.width = '0';
+      setTimeout(() => { e.target.style.width = width; }, 100);
+      barObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+skillBars.forEach(b => barObserver.observe(b));
