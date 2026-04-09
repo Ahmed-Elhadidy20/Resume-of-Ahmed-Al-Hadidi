@@ -1,31 +1,36 @@
+// Language switching functionality - FIXED
 function setLang(lang) {
   const body = document.body;
-  const arEls = document.querySelectorAll('.ar');
-  const enEls = document.querySelectorAll('.en');
   const btns = document.querySelectorAll('.lang-btn');
-
+  
   if (lang === 'en') {
     body.classList.add('lang-en');
     body.setAttribute('dir', 'ltr');
     body.setAttribute('lang', 'en');
-    arEls.forEach(el => el.style.display = 'none');
-    enEls.forEach(el => {
-      el.style.display = el.classList.contains('inline') ? 'inline' : 'block';
-    });
     btns[0].classList.remove('active');
     btns[1].classList.add('active');
   } else {
     body.classList.remove('lang-en');
     body.setAttribute('dir', 'rtl');
     body.setAttribute('lang', 'ar');
-    arEls.forEach(el => {
-      el.style.display = el.classList.contains('inline') ? 'inline' : 'block';
-    });
-    enEls.forEach(el => el.style.display = 'none');
     btns[0].classList.add('active');
     btns[1].classList.remove('active');
   }
 }
+
+// Event listeners for language buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const langBtns = document.querySelectorAll('.lang-btn');
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const lang = this.getAttribute('data-lang');
+      setLang(lang);
+    });
+  });
+  
+  // Set default language (Arabic)
+  setLang('ar');
+});
 
 // Active nav on scroll
 const sections = document.querySelectorAll('section[id]');
